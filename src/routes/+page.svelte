@@ -1,4 +1,5 @@
 <script>
+	import Img from '$lib/img/img.svelte';
 	import Icon from '$lib/ui/icons/icon.svelte';
 	import Logo from '$lib/ui/icons/logo.svelte';
 	import { get_lang_state } from '../lib/lang-state.svelte';
@@ -15,6 +16,13 @@
 		'https://cdn.sanity.io/images/1m8675a3/production/ec60fe0a5636e98b087abb069c04821a0e3d3554-750x563.jpg'
 	];
 </script>
+
+<svelte:head>
+	<title>
+		Maison intégrale | {lang == 'fr' ? `Accueil` : `Home`}
+	</title>
+	<meta name="keywords" content="Construction,Maisons,Écologie,Éconénergie" />
+</svelte:head>
 
 <div
 	class="flex xl:justify-center lg:items-center lg:gap-[5rem]- mt-4 md:mt-14 flex-col lg:flex-row lg:pb-16 gap-8"

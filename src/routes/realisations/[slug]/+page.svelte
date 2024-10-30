@@ -33,6 +33,12 @@
 	}
 </script>
 
+<svelte:head>
+	<title>
+		Maison intégrale | {lang == 'fr' ? `Réalisations` : `Work`} | {active.name[lang]}
+	</title>
+</svelte:head>
+
 {#snippet head()}
 	<div class="flex md:flex-col-reverse gap-4 md:gap-12 justify-between items-start">
 		<div class="text-2xl font-semibold">

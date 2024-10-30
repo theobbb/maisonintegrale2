@@ -10,6 +10,12 @@
 	const lang = $derived(lang_state.lang);
 </script>
 
+<svelte:head>
+	<title>
+		Maison intégrale | {lang == 'fr' ? `À propos` : `About`}
+	</title>
+</svelte:head>
+
 {#snippet card(e)}
 	<div class=" uppercase text-xl font-semibold">{e.name}</div>
 	<div class="mb-6 lg:text">{e.title[lang]}</div>
