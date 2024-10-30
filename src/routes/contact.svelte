@@ -18,13 +18,13 @@
 
 <div
 	onclick={close}
-	class="fixed top-0 left-0 right-0 h-[100lvh] z-30 bg-black/50 {open
+	class="fixed top-0 left-0 right-0 h-[100lvh] z-[40] bg-black/50 {open
 		? ''
 		: 'opacity-0 pointer-events-none'} transition ease-in-out"
 ></div>
 
 <div
-	class="fixed z-40 top-4 left-4 right-4 h-[100svh] flex items-center justify-center {open
+	class="fixed z-50 top-4 left-4 right-4 h-[100svh] flex items-center justify-center {open
 		? ''
 		: 'opacity-0 translate-y-4 pointer-events-none'} pointer-events-none transition ease-in-out"
 >

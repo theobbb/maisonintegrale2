@@ -34,7 +34,7 @@
 <div
 	class="mt-8 pb-44 lg:mt-14 xl:mt-24 lg:px-14 xl:px-20 whitespace-pre-line gap-10 lg:gap-[3rem_8rem] grid grid-cols-1 lg:grid-cols-2 grid-rows-[auto_1fr]"
 >
-	<div class="text-2xl col-span-full">{lang == 'fr' ? `Équipe` : `Team`}</div>
+	<div class="text-xl font-medium col-span-full"></div>
 
 	<div class="max-w-[500px]">
 		{@render card({ ...text.team.marc, name: 'Marc Baillargeon' })}

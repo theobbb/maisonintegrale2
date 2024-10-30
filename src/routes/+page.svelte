@@ -17,7 +17,7 @@
 </script>
 
 <div
-	class="flex xl:justify-center lg:items-center lg:gap-[5rem]- mt-4 md:mt-14 flex-col lg:flex-row lg:pb-24 gap-8"
+	class="flex xl:justify-center lg:items-center lg:gap-[5rem]- mt-4 md:mt-14 flex-col lg:flex-row lg:pb-16 gap-8"
 >
 	<div
 		class="lg:ml-[1.5rem] lg:mb-[2.7rem] xl:ml-[1.5rem] xl:mb-[4.5rem] pointer-events-none bg-red-500- absolute- relative hidden lg:block size-[6rem] opacity-30- lg:opacity-100 lg:h-[16rem] xl:h-[20rem] lg:min-w-[14rem] xl:min-w-[20rem]"
@@ -116,7 +116,7 @@
 </div>
 
 <div
-	class="max-w-[1000px] items-center lg:items-start gap-24 lg:gap-0 m-auto flex-col lg:flex-row flex justify-between"
+	class="max-w-[1000px] lg:pb-24 items-center lg:items-start gap-24 lg:gap-0 m-auto flex-col lg:flex-row flex justify-between"
 >
 	<div class="flex max-w-[500px] flex-col gap-16 lg:gap-24">
 		{#each text.comments as c}

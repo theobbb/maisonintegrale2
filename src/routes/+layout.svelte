@@ -20,6 +20,6 @@
 
 <main class="2xl:px-28 tracking-tight md:tracking-normal xl:px-14 px-4 max-w-[1920px] m-auto">
 	<Header />
-	{@render children()}
+	<div class="min-h-[calc(100lvh-17rem)]">{@render children()}</div>
 	<Footer />
 </main>
