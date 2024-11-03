@@ -8,7 +8,7 @@
 	const { children } = $props();
 
 	const url = $page.url.pathname;
-	console.log('url', url);
+
 	if (url.startsWith('/en')) {
 		set_lang_state('en');
 	} else {

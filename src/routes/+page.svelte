@@ -146,10 +146,10 @@
 		</a>
 		<div>
 			<div>
-				{lang == 'fr' ? `Finaliste 2019 - Prix Domus` : `2019 Finalist`}
+				{lang == 'fr' ? `Finaliste 2019 - Prix Domus` : `2019 Finalist - Domus price`}
 			</div>
 			<div>
-				{lang == 'fr' ? `Catégorie développement durable` : `Catégorie développement durable`}
+				{lang == 'fr' ? `Catégorie développement durable.` : ` Sustainable Development Category.`}
 			</div>
 		</div>
 		{@render divider()}
@@ -159,12 +159,20 @@
 		>
 			<img class="object-contain max-h-[60px]" src="/novo.png" />
 		</a>
-		<div>Nos constructions respectent les exigences techniques du programme Novoclimat</div>
+		<div>
+			{lang == 'fr'
+				? `Nos constructions respectent les exigences techniques du programme Novoclimat.`
+				: `Our constructions meet the technical requirements of the Novoclimat program.`}
+		</div>
 		{@render divider()}
 		<a href="https://www.garantiegcr.com/fr/" target="_blank">
 			<img class="max-h-[50px] object-contain" src="/garantie.png" />
 		</a>
-		<div>Nous sommes accrédités Garantie construction résidentielle</div>
+		<div>
+			{lang == 'fr'
+				? `Nous sommes accrédités Garantie construction résidentielle.`
+				: `We are accredited under the Residential Construction Guarantee.`}
+		</div>
 		{@render divider()}
 		<div class="col-span-2 text-right">RBQ 5683-285</div>
 	</div>
