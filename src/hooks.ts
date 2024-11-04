@@ -6,7 +6,7 @@ const translated = {
 	'/en/work': '/realisations'
 };
 export function reroute({ url }) {
-	if (!dev) return;
+	//if (!dev) return;
 
 	if (url.pathname in translated) {
 		return translated[url.pathname];
