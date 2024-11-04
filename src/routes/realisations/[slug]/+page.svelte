@@ -11,25 +11,32 @@
 
 	const lang = $derived(lang_state.lang);
 
-	console.log('data', data);
-
 	const active = $derived(data.res.find((item) => item.slug[lang].current === $page.params.slug));
+
+	let nav_href = $state({
+		prev: '',
+		next: ''
+	});
+
+	const len = data.res.length;
 
 	$effect(() => {
 		const slug = active?.slug;
 		if (!slug) return;
 		lang_state.set_href(`/realisations/${slug.fr.current}`, `/en/work/${slug.en.current}`);
+
+		nav_href.prev = get_nav(-1);
+		nav_href.next = get_nav(1);
 	});
 
-	$inspect(active);
-
-	function nav(direction) {
-		const len = data.res.length;
+	function get_nav(direction) {
 		const target_i = (active.i + direction + len) % len;
 
-		console.log('target_i', target_i);
+		const base = lang == 'fr' ? `/realisations` : `/en/work`;
+		const href = `${base}/${data.res[target_i].slug[lang].current}`;
 
-		goto(`${lang == 'fr' ? `/realisations` : `/en/work`}/${data.res[target_i].slug[lang].current}`);
+		return href;
+		//goto(`${lang == 'fr' ? `/realisations` : `/en/work`}/${data.res[target_i].slug[lang].current}`);
 	}
 </script>
 
@@ -45,12 +52,12 @@
 			{active.name[lang]}
 		</div>
 		<div class="flex text-2xl items-center gap-1.5">
-			<button class="p-1.5 border-2 flex items-center justify-center" onclick={() => nav(-1)}>
+			<a href={nav_href.prev} class="p-1.5 border-2 flex items-center justify-center">
 				<Icon name="ArrowLeft" />
-			</button>
-			<button class="p-1.5 border-2 flex items-center justify-center" onclick={() => nav(1)}>
+			</a>
+			<a href={nav_href.next} class="p-1.5 border-2 flex items-center justify-center">
 				<Icon name="ArrowRight" />
-			</button>
+			</a>
 		</div>
 	</div>
 {/snippet}

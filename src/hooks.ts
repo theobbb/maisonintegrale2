@@ -9,6 +9,7 @@ export function reroute({ url }) {
 	}
 
 	if (url.pathname.includes('/en/work')) {
+		console.log('hooks', url.pathname);
 		return url.pathname.replace('/en/work', '/realisations');
 	}
 }

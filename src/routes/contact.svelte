@@ -41,8 +41,8 @@
 		</div>
 		<div class="leading-4 pb-6 text-sm pr-6 font-medium">
 			{lang == 'fr'
-				? `N’hésitez pas à nous contacter pour toute question`
-				: 'Feel free to contact us if you have any questions'}
+				? `N’hésitez pas à nous contacter pour toute question.`
+				: 'Feel free to contact us if you have any questions.'}
 		</div>
 
 		<div class=" border-t-2 pt-5 font-medium">
