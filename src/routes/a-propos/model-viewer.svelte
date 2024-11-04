@@ -93,7 +93,7 @@
 		class="absolute inset-0 w-full h-full"
 		disable-zoom
 		bind:this={model}
-		src="model.glb"
+		src="/model.glb"
 		current-time="0.01"
 		animation-name="CubeAction"
 		minimum-render-scale="1"
