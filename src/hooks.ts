@@ -1,11 +1,13 @@
+import { dev } from '$app/environment';
+
 const translated = {
-	'/test1': '/a-propos',
-	'/test2': '/realisations',
 	'/en': '/',
 	'/en/about': '/a-propos',
 	'/en/work': '/realisations'
 };
 export function reroute({ url }) {
+	if (!dev) return;
+
 	if (url.pathname in translated) {
 		return translated[url.pathname];
 	}
