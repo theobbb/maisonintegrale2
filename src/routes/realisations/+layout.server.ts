@@ -20,4 +20,3 @@ export async function load() {
 		res
 	};
 }
-export const prerender = true;

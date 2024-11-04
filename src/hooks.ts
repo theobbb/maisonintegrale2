@@ -10,8 +10,7 @@ export function reroute({ url }) {
 		return translated[url.pathname];
 	}
 
-	if (url.pathname.startsWith('/en/work')) {
-		console.log('hooks', url.pathname);
+	if (url.pathname.includes('/en/work')) {
 		return url.pathname.replace('/en/work', '/realisations');
 	}
 }
