@@ -1,4 +1,6 @@
 const translated = {
+	'/test1': '/a-propos',
+	'/test2': '/realisations',
 	'/en': '/',
 	'/en/about': '/a-propos',
 	'/en/work': '/realisations'
@@ -8,7 +10,7 @@ export function reroute({ url }) {
 		return translated[url.pathname];
 	}
 
-	if (url.pathname.includes('/en/work')) {
+	if (url.pathname.startsWith('/en/work')) {
 		console.log('hooks', url.pathname);
 		return url.pathname.replace('/en/work', '/realisations');
 	}
