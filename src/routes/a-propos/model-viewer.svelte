@@ -34,18 +34,14 @@
 	function init() {
 		if (!model) return;
 
-		console.log('init');
-
 		const alpha = 0.5;
 		const bg = [241, 242, 224];
 
 		const color = bg.map((c) => Math.round(c * (1 - alpha))).join(', ');
-		console.log(color);
 		const material = model.model.materials[1];
 		material.pbrMetallicRoughness.setBaseColorFactor(`rgb(${color})`);
 
 		update();
-		console.log('reveal');
 
 		reveal = true;
 	}
@@ -60,8 +56,6 @@
 
 	function update() {
 		if (!model) return;
-
-		console.log('update');
 
 		progress = quadInOut(
 			contain_float(window.scrollY / (document.body.scrollHeight - window.innerHeight), 0, 1)

@@ -62,8 +62,8 @@
 			? ''
 			: ''}"
 	>
-		<Link href={lang_state.href.fr} active={lang == 'fr'}>FR</Link>
-		<Link href={lang_state.href.en} active={lang == 'en'}>EN</Link>
+		<Link href={lang_state.href.fr} active={lang == 'fr'} data-sveltekit-noscroll>FR</Link>
+		<Link href={lang_state.href.en} active={lang == 'en'} data-sveltekit-noscroll>EN</Link>
 	</div>
 {/snippet}
 
@@ -75,7 +75,7 @@
 		? ''
 		: 'border-transparent'} border-b-2"
 >
-	<div class="font-semibold flex items-center">
+	<div class="font-medium flex items-center">
 		<Link href={lang == 'fr' ? '/' : '/en'}>MAISON INTÉGRALE</Link>
 	</div>
 	<div class="hidden md:flex items-center justify-center">

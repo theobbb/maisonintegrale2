@@ -27,7 +27,7 @@
 {/snippet}
 
 {#snippet card2(e)}
-	<div class="mb-6 border-b-2 border-black/5 pb-0.5 uppercase text-xl font-semibold">
+	<div class="mb-6 border-b-2- border-black/5 pb-0.5 uppercase text-xl font-semibold">
 		{e.title[lang]}
 	</div>
 	<div class="lg:text text-black">
@@ -38,7 +38,7 @@
 {/snippet}
 
 <div
-	class="mt-8 pb-44 lg:mt-14 xl:mt-24 lg:px-14 xl:px-20 whitespace-pre-line gap-10 lg:gap-[3rem_8rem] grid grid-cols-1 lg:grid-cols-2 grid-rows-[auto_1fr]"
+	class="mt-8 pb-44 lg:mt-14 xl:mt-24 lg:px-14 xl:px-20 whitespace-pre-line gap-10 lg:gap-[6rem_8rem] grid grid-cols-1 lg:grid-cols-2 grid-rows-[auto_1fr]"
 >
 	<div class="text-xl font-medium col-span-full"></div>
 

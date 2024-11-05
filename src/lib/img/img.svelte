@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 
-	const { img, src = '', alt = '', blurhash = '' } = $props();
+	const { src = '', alt = '', size, blurdata = '' } = $props();
 
 	let loaded = $state(false);
 	onMount(() => {
@@ -16,26 +16,23 @@
 			loaded = true;
 		};
 	});
-	const size = img.asset.metadata.dimensions;
+	//const size = img.asset.metadata.dimensions;
+	// width: {size.width}px; height: {size.height}px;
 </script>
 
-<div class="relative h-full overflow-hidden">
+<div class="absolute inset-0 h-full overflow-hidden" style="">
 	<img
 		fetchPriority="high"
-		class="absolute top-0 left-0 w-full h-full object-cover blur-xl contrast-[.8] {loaded
-			? 'hidden-'
-			: ''}"
-		style="transform: scale(1.1)-; width: {size.width}px; height: {size.height}px;"
-		src={img.asset.metadata.lqip}
-		{alt}
+		class="absolute top-0 left-0 w-full h-full object-cover contrast-[.8] {loaded ? 'hidden-' : ''}"
+		src={blurdata}
+		alt="{alt}-blurload"
 	/>
 
 	<img
 		class="w-full z-10 relative h-full object-cover {loaded
 			? ''
-			: 'opacity-0'} transition duration-500"
-		style="transform: scale(1.1)-"
-		src={img.asset.url}
+			: 'opacity-0'} transition duration-300"
+		{src}
 		{alt}
 	/>
 </div>

@@ -1,20 +1,22 @@
 <script>
 	import Img from '$lib/img/img.svelte';
 	import Icon from '$lib/ui/icons/icon.svelte';
-	import Logo from '$lib/ui/icons/logo.svelte';
+	import Logo from './logo.svelte';
 	import { get_lang_state } from '../lib/lang-state.svelte';
+	import { imgs } from './imgs';
 	import { text } from './text';
+	import TextReveal from './text-reveal.svelte';
 
 	const lang_state = get_lang_state();
 	lang_state.set_href('/', '/en');
 
 	const lang = $derived(lang_state.lang);
-
+	/*
 	const imgs = [
 		'https://cdn.sanity.io/images/1m8675a3/production/6361fcaf0dbc3e9758e8b0069f62fc9447795835-750x500.jpg',
 		'https://cdn.sanity.io/images/1m8675a3/production/cc03911579951e0f6769994046deae1f32e74539-1920x1280.jpg',
 		'https://cdn.sanity.io/images/1m8675a3/production/ec60fe0a5636e98b087abb069c04821a0e3d3554-750x563.jpg'
-	];
+	];*/
 </script>
 
 <svelte:head>
@@ -37,7 +39,7 @@
 	>
 		<div class="flex-col flex gap-8 md:gap-16">
 			<div
-				class="md:text-5xl pr-0 sm:pr-11 relative justify-end lg:justify-between flex sm:text-3xl text-3xl text-lime-950 leading-[126%] font-semibold tracking-tight"
+				class="md:text-5xl pr-0 sm:pr-11 relative justify-end lg:justify-between flex sm:text-3xl text-3xl text-lime-950 !leading-[120%] font-semibold tracking-tight"
 			>
 				<div class="lg:hidden relative w-full flex justify-end mr-4 mb-2">
 					<div
@@ -48,21 +50,35 @@
 				</div>
 				<div class="lg:hidden flex whitespace-nowrap flex-col justify-end items-end-">
 					<div>
-						{lang == 'fr' ? `L'harmonie  ` : `The harmony`}
+						<TextReveal text={lang == 'fr' ? `L'harmonie` : `The harmony`} />
 					</div>
 					<div>
-						{lang == 'fr' ? `entre science et art` : `between science  `}
+						<TextReveal
+							delay={200}
+							text={lang == 'fr' ? `entre science et art` : `between science`}
+						/>
 					</div>
-					<div>{lang == 'fr' ? `dans chaque` : `and art in each`}</div>
-					<div class="self-end">{lang == 'fr' ? `construction` : `construction`}</div>
+					<div>
+						<TextReveal delay={400} text={lang == 'fr' ? `dans chaque` : `and art in each`} />
+					</div>
+					<div class="self-end">
+						<TextReveal delay={600} text={lang == 'fr' ? `construction` : `construction`} />
+					</div>
 				</div>
 				<div class="hidden lg:block">
 					<div>
-						{lang == 'fr'
-							? `L'harmonie entre science et art `
-							: `The harmony between science and art`}
+						<TextReveal
+							text={lang == 'fr'
+								? `L'harmonie entre science et art `
+								: `The harmony between science and art`}
+						/>
 					</div>
-					<div>{lang == 'fr' ? `dans chaque construction` : `in each construction`}</div>
+					<div>
+						<TextReveal
+							delay={600}
+							text={lang == 'fr' ? `dans chaque construction` : `in each construction`}
+						/>
+					</div>
 				</div>
 			</div>
 			<div
@@ -87,10 +103,13 @@
 
 <div class="2xl:-mx-28 xl:-mx-14 -mx-4 relative z-0">
 	<div class="px-1.5 relative">
-		<div class="flex gap-1.5 w-full h-[500px]">
-			{#each imgs as img}
+		<div class="flex gap-1.5 w-full h-[460px]">
+			{#each imgs as { src, blurdata }, i}
 				<div class="relative w-full h-full">
-					<img class="absolute w-full h-full object-cover" src={img} alt="" />
+					<Img {src} {blurdata} alt="" />
+					<!--
+					<img class="absolute w-full h-full object-cover" src={img.src} alt="" />
+					-->
 				</div>
 			{/each}
 		</div>
@@ -106,7 +125,7 @@
 </div>
 
 <div class="lg:mt-16 xl:mr-0 -mr-2.5 mt-12 mb-24 lg:mb-44">
-	<div class="text-xl mb-6 font-semibold">
+	<div class="text-xl mb-5 font-semibold">
 		{lang == 'fr' ? `Nos services` : `Our services`}
 	</div>
 

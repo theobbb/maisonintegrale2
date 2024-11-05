@@ -1,6 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import SanityImg from '$lib/img/sanity-img.svelte';
 	import Block from '$lib/ui/block.svelte';
 	import Icon from '$lib/ui/icons/icon.svelte';
 	import { get_lang_state } from '../../../lib/lang-state.svelte';
@@ -82,8 +83,11 @@
 
 {#snippet imgs()}
 	{#each active.imgs as img, i}
-		<div class="relative -mx-2.5 md:mx-0 mb-1.5 {i == 0 ? 'hidden md:block' : ''}">
-			<img class="" src={img.url} alt={active.name[lang]} />
+		<div
+			class="relative -mx-2.5 md:mx-0 mb-1.5 {i == 0 ? 'hidden md:block' : ''}"
+			style="aspect-ratio: {img.asset.metadata.dimensions.aspectRatio}"
+		>
+			<SanityImg {img} alt={active.name[lang]} />
 		</div>
 	{/each}
 {/snippet}

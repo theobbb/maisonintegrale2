@@ -1,5 +1,6 @@
 <script>
 	import Img from '$lib/img/img.svelte';
+	import SanityImg from '$lib/img/sanity-img.svelte';
 	import { load_img } from '$lib/utils/load-img';
 	import { get_lang, get_lang_state } from '../../lib/lang-state.svelte';
 
@@ -41,11 +42,13 @@
 				class="flex flex-col justify-between h-full"
 				href="{lang == 'fr' ? '/realisations' : '/en/work'}/{item.slug[lang].current}"
 			>
-				<div class="h-full relative">
-					<Img img={item.imgs[0]} alt={item.name[lang]} />
+				<div class="h-full h-[400px] relative" style="">
+					<SanityImg img={item.imgs[0]} alt={item.name[lang]} />
+					<!--
 					<img class="hidden object-cover h-full" src={item.imgs[0].url} alt={item.name[lang]} />
+					-->
 				</div>
-				<div class="mt-1 -mx-1.5 2xl:px-28 px-4 xl:px-14 tracking-[wide font-semibold">
+				<div class="mt-2 -mx-1.5 2xl:px-28 px-4 xl:px-14 tracking-[wide font-semibold">
 					{item.name[lang]}
 				</div>
 			</a>

@@ -1,13 +1,9 @@
-import { dev } from '$app/environment';
-
 const translated = {
 	'/en': '/',
 	'/en/about': '/a-propos',
 	'/en/work': '/realisations'
 };
 export function reroute({ url }) {
-	//if (!dev) return;
-
 	if (url.pathname in translated) {
 		return translated[url.pathname];
 	}
