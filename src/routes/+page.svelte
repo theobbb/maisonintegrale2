@@ -11,19 +11,18 @@
 	lang_state.set_href('/', '/en');
 
 	const lang = $derived(lang_state.lang);
-	/*
-	const imgs = [
-		'https://cdn.sanity.io/images/1m8675a3/production/6361fcaf0dbc3e9758e8b0069f62fc9447795835-750x500.jpg',
-		'https://cdn.sanity.io/images/1m8675a3/production/cc03911579951e0f6769994046deae1f32e74539-1920x1280.jpg',
-		'https://cdn.sanity.io/images/1m8675a3/production/ec60fe0a5636e98b087abb069c04821a0e3d3554-750x563.jpg'
-	];*/
 </script>
 
 <svelte:head>
 	<title>
-		Maison intégrale | {lang == 'fr' ? `Accueil` : `Home`}
+		Maison Intégrale | {lang == 'fr' ? `Accueil` : `Home`}
 	</title>
-	<meta name="keywords" content="Construction,Maisons,Écologie,Éconénergie" />
+	<meta
+		name="description"
+		content={lang == 'fr'
+			? `Construction de maisons écoénergétiques de haute qualité. Découvrez l'harmonie entre science et art proposé par Maison Intégrale.`
+			: `High-quality, energy-efficient home construction. Discover the harmony of science and art offered by Maison Intégrale.`}
+	/>
 </svelte:head>
 
 <div

@@ -29,8 +29,15 @@
 
 <svelte:head>
 	<title>
-		Maison intégrale | {lang == 'fr' ? `Réalisations` : `Work`}
+		Maison Intégrale | {lang == 'fr' ? `Réalisations` : `Work`}
 	</title>
+
+	<meta
+		name="description"
+		content={lang == 'fr'
+			? `Explorez les réalisations de Maison Intégrale, où chaque projet reflète notre engagement technique et artistique dans son intégration à l'environnement.`
+			: `Explore the creations of Maison Intégrale, where each project reflects our technical and artistic commitment to environmental integration.`}
+	/>
 </svelte:head>
 
 <div

@@ -12,8 +12,14 @@
 
 <svelte:head>
 	<title>
-		Maison intégrale | {lang == 'fr' ? `À propos` : `About`}
+		Maison Intégrale | {lang == 'fr' ? `À propos` : `About`}
 	</title>
+	<meta
+		name="description"
+		content={lang == 'fr'
+			? `Un physicien + une designer qui unissent leurs talents | Découvrez les valeurs et la démarche de Maison Intégrale.`
+			: `A physicist + a designer combining their talents | Discover the values and approach of Maison Intégrale.`}
+	/>
 </svelte:head>
 
 {#snippet card(e)}

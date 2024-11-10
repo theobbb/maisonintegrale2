@@ -39,11 +39,28 @@
 		return href;
 		//goto(`${lang == 'fr' ? `/realisations` : `/en/work`}/${data.res[target_i].slug[lang].current}`);
 	}
+
+	const n_cols = 2;
+	let splitted_imgs = $derived.by(() => {
+		const cols = Array.from({ length: n_cols }, () => ({
+			items: []
+		}));
+		let col_cursor = 0;
+
+		active.imgs.forEach((img, i) => {
+			const col_i = col_cursor % n_cols;
+
+			cols[col_i].items.push(img);
+			col_cursor++;
+		});
+
+		return cols;
+	});
 </script>
 
 <svelte:head>
 	<title>
-		Maison intégrale | {lang == 'fr' ? `Réalisations` : `Work`} | {active.name[lang]}
+		Maison Intégrale | {lang == 'fr' ? `Réalisations` : `Work`} | {active.name[lang]}
 	</title>
 </svelte:head>
 
@@ -100,9 +117,25 @@
 
 			{@render body()}
 		</div>
-		<div class="xl:columns-2 gap-1.5">
+		<div class="grid grid-cols-2 gap-1.5" style="grid-template-rows: masonry;">
+			{#each splitted_imgs as col, i}
+				<div>
+					{#each col.items as img}
+						<div
+							class="relative -mx-2.5 md:mx-0 mb-1.5 {i == 0 ? 'hidden md:block' : ''}"
+							style="aspect-ratio: {img.asset.metadata.dimensions.aspectRatio}"
+						>
+							<SanityImg {img} alt={active.name[lang]} />
+						</div>
+					{/each}
+				</div>
+			{/each}
+		</div>
+		<!--
+		<div class=" gap-1.5">
 			{@render imgs()}
 		</div>
+		-->
 	</div>
 
 	<div class="md:hidden mt-10 grid grid-cols-1 md:grid-cols-2">
