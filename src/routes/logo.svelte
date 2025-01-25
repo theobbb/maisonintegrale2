@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
+	const { footer = false } = $props();
+
 	let open = $state(false);
 
 	onMount(() => {
@@ -40,7 +42,7 @@
 		 stroke-dasharray: {path_size}; stroke-dashoffset: {open
 				? 0
 				: path_size}; transition: stroke-dashoffset {duration}ms; stroke-width: 4px;"
-			class="ease-in-out stroke-black/70"
+			class="ease-in-out {footer ? 'stroke-white/30' : 'stroke-black/70'}"
 		>
 		</path>
 	</g>
@@ -51,7 +53,7 @@
 			style="clip-path: {!open
 				? `circle(0% at 8% 98%)`
 				: `circle(100% at -6% 50%)`}; transition: clip-path {duration}ms;"
-			class=" transition ease-in-out duration-500-"
+			class=" transition ease-in-out duration-500- {footer ? 'fill-lime-600' : ''}"
 		>
 		</path>
 	</g>

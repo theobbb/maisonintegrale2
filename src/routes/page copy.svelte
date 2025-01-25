@@ -3,7 +3,7 @@
 	import Icon from '$lib/ui/icons/icon.svelte';
 	import Logo from './logo.svelte';
 	import { get_lang_state } from '../lib/lang-state.svelte';
-	import { imgs, imgs2 } from './imgs';
+	import { imgs } from './imgs';
 	import { text } from './text';
 	import TextReveal from './text-reveal.svelte';
 	import { text as text_a_propos } from './a-propos/text';
@@ -124,37 +124,21 @@
 	</a>
 </div>
 
-<div class="lg:mt-24 xl:mr-0 -mr-2.5 mt-12 mb-24">
-	<div class="text-xl hidden mb-5 font-semibold">
+<div class="lg:mt-16 xl:mr-0 -mr-2.5 mt-12 mb-24 lg:mb-44">
+	<div class="text-xl mb-5 font-semibold">
 		{lang == 'fr' ? `Nos services` : `Our services`}
 	</div>
 
 	<div
-		class="grid border-2- bg-white/10 ml-6 -mr-2- lg:ml-0 gap-12 font-medium gap-1.5 leading-5 lg:grid-cols-3"
+		class="grid border-2 bg-white/10 ml-6 -mr-2- lg:ml-0 font-medium gap-1.5 leading-5 grid-rows-5 lg:grid-rows-1 lg:grid-cols-5"
 	>
 		{#each text.services as s}
 			<div
-				class="lg:border-r-2- lg:border-b-0 last:border-b-0 border-b-2 last:border-r-0 overflow-hidden relative xl:px-5- px-4- py-2.5- xl:py-4 pb-6 xl:pb-16- pr-12 mb-8"
+				class="lg:border-r-2 lg:border-b-0 last:border-b-0 border-b-2 last:border-r-0 overflow-hidden relative xl:px-5 px-4 py-2.5 xl:py-4 pb-6 xl:pb-16 pr-12"
 			>
-				<div class="text-lg mb-4">{s.title[lang]}</div>
-				<div class="text-black/60 text-sm">{s.sub[lang]}</div>
+				{s[lang]}
 			</div>
 		{/each}
-	</div>
-</div>
-
-<div class="2xl:-mx-28 xl:-mx-14 -mx-4 relative z-0 mb-24 lg:mb-44">
-	<div class="px-1.5 relative">
-		<div class="flex gap-1.5 w-full h-[460px]">
-			{#each imgs2 as { src, blurdata }, i}
-				<div class="relative w-full h-full">
-					<Img {src} {blurdata} alt="" />
-					<!--
-					<img class="absolute w-full h-full object-cover" src={img.src} alt="" />
-					-->
-				</div>
-			{/each}
-		</div>
 	</div>
 </div>
 
@@ -210,7 +194,7 @@
 		</div>
 		{@render divider()}
 		<div class="col-span-full max-w-[600px]">
-			<div class="mb-4 pb-0.5 tracking-tight text-lg font-semibold">
+			<div class="mb-4 pb-0.5 uppercase text-lg font-semibold">
 				{text_a_propos.homo.title[lang]}
 			</div>
 			<div class="lg:text">
@@ -220,7 +204,7 @@
 			</div>
 		</div>
 		{@render divider()}
-		<div class="col-span-2 text-right text-black/60">RBQ 5683-285</div>
+		<div class="col-span-2 text-right">RBQ 5683-285</div>
 	</div>
 </div>
 

@@ -25,7 +25,7 @@
 {#snippet card(e)}
 	<div class=" uppercase text-xl font-semibold">{e.name}</div>
 	<div class="mb-6 lg:text">{e.title[lang]}</div>
-	<div class="lg:text text-black">
+	<div class="pl-6 lg:text text-black">
 		{#each e.body[lang].split('\n') as block}
 			<p class="mb-4">{block}</p>
 		{/each}
@@ -44,31 +44,21 @@
 {/snippet}
 
 <div
-	class="mt-8 border-l-2 border-lime-800/20 pb-44 lg:mt-14 xl:mt-24 lg:px-14 xl:px-20 whitespace-pre-line gap-10 lg:gap-[0rem_8rem] grid grid-cols-1 lg:grid-cols-2 grid-rows-[auto_1fr]"
+	class="mt-8 pb-44 lg:mt-14 xl:mt-24 lg:px-14 xl:px-20 whitespace-pre-line gap-10 lg:gap-[0rem_8rem] grid grid-cols-1 lg:grid-cols-2 grid-rows-[auto_1fr]"
 >
 	<div class="text-xl font-medium col-span-full"></div>
 
-	<div
-		class="-mx-20 mb-12 col-span-full bg-[--bg] -translate-x-1 py-4 text-lime-700/80 text-4xl font-semibold"
-	>
-		Équipe
-	</div>
-
-	<div class="max-w-[500px] relative">
-		<div class="border-l-2 hidden absolute h-full border-lime-700/20 -translate-x-16 -ml-3"></div>
+	<div class="-mx-20 mb-12 col-span-full text-lime-700/80 text-4xl font-semibold">Équipe</div>
+	<div class="max-w-[500px] border-l-2 border-lime-700/20">
 		{@render card({ ...text.team.marc, name: 'Marc Baillargeon' })}
 	</div>
 	<div class="max-w-[500px]">
 		{@render card({ ...text.team.marisol, name: 'Marisol Sarrazin' })}
 	</div>
 
-	<div
-		class="-mx-20 mb-24 mt-36 col-span-full bg-[--bg] -translate-x-1 py-4 text-lime-700/80 text-4xl font-semibold"
-	>
-		Démarche
-	</div>
+	<div class="-mx-20 mb-12 col-span-full text-lime-700/80 text-5xl font-semibold">Démarche</div>
 
-	<div class=" mb-44 col-span-full max-w-[900px]">
+	<div class="mt-44 mb-44 col-span-full max-w-[900px]">
 		{@render card2(text.valeur)}
 	</div>
 	<div class="max-w-[500px]">

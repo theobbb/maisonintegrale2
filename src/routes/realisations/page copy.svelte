@@ -1,7 +1,6 @@
 <script>
 	import Img from '$lib/img/img.svelte';
 	import SanityImg from '$lib/img/sanity-img.svelte';
-	import Block from '$lib/ui/block.svelte';
 	import { load_img } from '$lib/utils/load-img';
 	import { get_lang, get_lang_state } from '../../lib/lang-state.svelte';
 
@@ -47,22 +46,17 @@
 	{#each data.res as item}
 		<div class="mb-8">
 			<a
-				class="flex flex-col justify-between- h-full group"
+				class="flex flex-col justify-between h-full"
 				href="{lang == 'fr' ? '/realisations' : '/en/work'}/{item.slug[lang].current}"
 			>
-				<div class="h-full h-[28rem] w-full overflow-hidden relative" style="">
-					<div class="h-full w-full relative transition group-hover:scale-[1.05]" style="">
-						<SanityImg img={item.imgs[0]} alt={item.name[lang]} />
-					</div>
+				<div class="h-full min-h-[400px] w-full relative" style="">
+					<SanityImg img={item.imgs[0]} alt={item.name[lang]} />
 					<!--
 					<img class="hidden object-cover h-full" src={item.imgs[0].url} alt={item.name[lang]} />
 					-->
 				</div>
-				<div class="mt-2.5 -mx-1.5 2xl:px-28- px-4 xl:px-14-">
-					<div class="tracking-wide font-semibold">{item.name[lang]}</div>
-					<div class="text-sm mt-6">
-						<Block text={item.top[lang]} spacing={1} class="space-y-1-" />
-					</div>
+				<div class="mt-1.5 -mx-1.5 2xl:px-28 px-4 xl:px-14 tracking-[wide font-semibold">
+					{item.name[lang]}
 				</div>
 			</a>
 		</div>
