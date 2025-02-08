@@ -42,25 +42,25 @@
 </svelte:head>
 
 <div
-	class="grid lg:grid-cols-3 gap-0 sm:gap-1.5 sm:grid-cols-2 2xl:-mx-28 xl:-mx-14 -mx-4 grid-cols-1 px-1.5"
+	class="-mx-4 grid grid-cols-1 gap-0 px-1.5 sm:grid-cols-2 sm:gap-1.5 lg:grid-cols-3 xl:-mx-14 2xl:-mx-28"
 >
 	{#each data.res as item}
 		<div class="mb-8">
 			<a
-				class="flex flex-col justify-between- h-full group"
+				class="justify-between- group flex h-full flex-col"
 				href="{lang == 'fr' ? '/realisations' : '/en/work'}/{item.slug[lang].current}"
 			>
-				<div class="h-full h-[28rem] w-full overflow-hidden relative" style="">
-					<div class="h-full w-full relative transition group-hover:scale-[1.05]" style="">
+				<div class=" relative h-[28rem] w-full overflow-hidden" style="">
+					<div class="relative h-full w-full transition group-hover:scale-[1.05]" style="">
 						<SanityImg img={item.imgs[0]} alt={item.name[lang]} />
 					</div>
 					<!--
 					<img class="hidden object-cover h-full" src={item.imgs[0].url} alt={item.name[lang]} />
 					-->
 				</div>
-				<div class="mt-2.5 -mx-1.5 2xl:px-28- px-4 xl:px-14-">
-					<div class="tracking-wide font-semibold">{item.name[lang]}</div>
-					<div class="text-sm mt-6">
+				<div class="-mx-1.5 mb-4 mt-2.5 px-4">
+					<div class="font-semibold tracking-wide">{item.name[lang]}</div>
+					<div class="mt-6 text-sm">
 						<Block text={item.top[lang]} spacing={1} class="space-y-1-" />
 					</div>
 				</div>

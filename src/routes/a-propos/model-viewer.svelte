@@ -63,6 +63,9 @@
 
 		model.currentTime = contain_float(progress * model.duration, 0.01, model.duration - 0.01);
 	}
+	//camera-orbit="calc(4.4rad - {progress} * 2rad) calc(200deg + {progress} * -140deg) calc(12m - {progress} * 8m)"
+
+	//camera-orbit="0 {progress * -45 + 90}deg {(1 - progress) * 32}m"
 </script>
 
 <svelte:window {onscroll} />
@@ -74,17 +77,20 @@
 	></script>
 </svelte:head>
 
+<div class="fixed bottom-4 left-4">
+	{progress}
+</div>
 <div
-	class="fixed inset-0 pointer-events-none {reveal
+	class="pointer-events-none fixed left-0 right-0 top-0 h-[100lvh] {reveal
 		? 'opacity-60'
-		: 'opacity-0'} transition ease-in duration-700"
+		: 'opacity-0'} transition duration-700 ease-in"
 >
 	<model-viewer
 		material="color: red; metalness: 0.5; roughness: 0.5;"
 		{onload}
 		preload
 		loading="eager"
-		class="absolute inset-0 w-full h-full"
+		class=" max-md:scale-200 absolute inset-0 h-full w-full"
 		disable-zoom
 		bind:this={model}
 		src="/model.glb"
@@ -92,6 +98,6 @@
 		animation-name="CubeAction"
 		minimum-render-scale="1"
 		max-camera-orbit="auto 90deg auto"
-		camera-orbit="calc(4.3rad - {progress} * 2rad) calc(200deg + {progress} * -140deg) calc(12m - {progress} * 8m)"
+		camera-orbit="{progress * 190 + 50}deg {progress * -45 + 90}deg {progress * -8 + 12}m"
 	></model-viewer>
 </div>

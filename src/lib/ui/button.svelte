@@ -4,7 +4,7 @@
 
 <button
 	{...props}
-	class="text-sm font-semibold text-white bg-lime-700/80 px-3 py-1.5 {props.class}"
+	class="cursor-pointer border-2 bg-white/20 px-3 py-1.5 text-sm font-bold tracking-wide transition hover:bg-black/10 {props.class}"
 >
 	{@render children()}
 </button>

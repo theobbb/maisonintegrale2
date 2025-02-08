@@ -2,6 +2,10 @@ export const text = {
 	team: {
 		marc: {
 			title: {
+				fr: `Marc Baillargeon`,
+				en: `Marc Baillargeon`
+			},
+			sub: {
 				fr: `constructeur`,
 				en: `builder`
 			},
@@ -16,6 +20,10 @@ From conception to construction and all the intermediate stages, he personally o
 		},
 		marisol: {
 			title: {
+				fr: `Marisol Sarrazin`,
+				en: `Marisol Sarrazin`
+			},
+			sub: {
 				fr: `conceptrice`,
 				en: `creator`
 			},
@@ -70,8 +78,8 @@ From the inside, each window becomes a painting, an opening to nature. The objec
 			en: `Certification`
 		},
 		body: {
-			fr: `Toutes les Maisons Intégrales sont accéditées Novoclimat 2.0. Elles satisfont aux critères LEED et peuvent être accréditées sur demande. L’accrédition Novoclimat donne accès à une subvention du gouvernement provincial.`,
-			en: `All Maison Intégrale homes are Novoclimat 2.0 certified. They meet LEED criteria and can be accredited upon request. The Novoclimat accreditation grants access to a provincial government subsidy.
+			fr: `Toutes les Maisons Intégrales sont accéditées Novoclimat. Elles satisfont aux critères LEED et peuvent être accréditées sur demande. L’accrédition Novoclimat donne accès à une subvention du gouvernement provincial.`,
+			en: `All Maison Intégrale homes are Novoclimat certified. They meet LEED criteria and can be accredited upon request. The Novoclimat accreditation grants access to a provincial government subsidy.
 `
 		}
 	}

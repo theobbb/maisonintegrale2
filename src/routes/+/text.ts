@@ -39,16 +39,6 @@ export const text = {
 				fr: `Nous analysons vos plans ou bâtiments existants pour optimiser les systèmes structuraux, thermiques et énergétiques, garantissant ainsi durabilité et performance.`,
 				en: `We analyze your plans or existing structures to optimize structural, thermal, and energy systems, ensuring durability and performance.`
 			}
-		},
-		{
-			title: {
-				fr: `Conception et fabrication d’escaliers d’acier`,
-				en: `Design and Fabrication of Steel Staircases`
-			},
-			sub: {
-				fr: `Nous créons des escaliers en acier uniques qui marient robustesse, esthétisme et précision technique, s’intégrant harmonieusement dans votre espace.`,
-				en: `We create unique steel staircases that combine durability, aesthetics, and technical precision, harmoniously integrating into your space.`
-			}
 		}
 	],
 	special: {
@@ -71,7 +61,18 @@ export const text = {
 			from: 'Claire et Jean Tremblay',
 			text: `"Marisol a un don pour intégrer les maisons dans leur environnement naturel tout en optimisant l'efficacité énergétique. Chaque pièce bénéficie d'une lumière naturelle exceptionnelle grâce à son design intelligent."`
 		}
-	]
+	],
+	homo: {
+		title: {
+			fr: `Homologation`,
+			en: `Certification`
+		},
+		body: {
+			fr: `Toutes les Maisons Intégrales sont accéditées Novoclimat. Elles satisfont aux critères LEED et peuvent être accréditées sur demande. L’accrédition Novoclimat donne accès à une subvention du gouvernement provincial.`,
+			en: `All Maison Intégrale homes are Novoclimat certified. They meet LEED criteria and can be accredited upon request. The Novoclimat accreditation grants access to a provincial government subsidy.
+`
+		}
+	}
 };
 
 /*		{
@@ -89,4 +90,15 @@ export const text = {
 		{
 			fr: `Conception et fabrication d’escaliers d’acier`,
 			en: `Design and fabrication of steel staircases`
+		}*/
+/*
+		{
+			title: {
+				fr: `Conception et fabrication d’escaliers d’acier`,
+				en: `Design and Fabrication of Steel Staircases`
+			},
+			sub: {
+				fr: `Nous créons des escaliers en acier uniques qui marient robustesse, esthétisme et précision technique, s’intégrant harmonieusement dans votre espace.`,
+				en: `We create unique steel staircases that combine durability, aesthetics, and technical precision, harmoniously integrating into your space.`
+			}
 		}*/

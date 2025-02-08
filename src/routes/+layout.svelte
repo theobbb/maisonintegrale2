@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Header from './header.svelte';
+	import Header from './+/header.svelte';
 	import { get_lang_state, set_lang_state } from '../lib/lang-state.svelte';
-	import './style.pcss';
-	import Footer from './footer.svelte';
+	import '$lib/style.css';
+	import Footer from './+/footer.svelte';
+	import { onMount } from 'svelte';
 
 	const { children } = $props();
 
@@ -16,9 +17,15 @@
 	}
 
 	const lang_state = get_lang_state();
+
+	onMount(() => {
+		//document.
+	});
 </script>
 
-<main class="2xl:px-28 tracking-tight md:tracking-normal xl:px-14 px-4 max-w-[1920px] m-auto">
+<main
+	class="**:border-black/10 m-auto max-w-[1920px] px-4 tracking-tight md:tracking-normal xl:px-14 2xl:px-28"
+>
 	<Header />
 	<div class="min-h-[calc(100lvh-17rem)]">{@render children()}</div>
 	<Footer />

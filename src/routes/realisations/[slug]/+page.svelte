@@ -65,15 +65,21 @@
 </svelte:head>
 
 {#snippet head()}
-	<div class="flex md:flex-col-reverse gap-4 md:gap-12 justify-between items-start">
+	<div class="flex items-start justify-between gap-4 md:flex-col-reverse md:gap-12">
 		<div class="text-2xl font-semibold">
 			{active.name[lang]}
 		</div>
-		<div class="flex text-2xl items-center gap-1.5">
-			<a href={nav_href.prev} class="p-1.5 border-2 flex items-center justify-center">
+		<div class="flex items-center gap-1.5 text-2xl">
+			<a
+				href={nav_href.prev}
+				class="flex items-center justify-center border-2 p-1.5 transition hover:bg-black/10"
+			>
 				<Icon name="ArrowLeft" />
 			</a>
-			<a href={nav_href.next} class="p-1.5 border-2 flex items-center justify-center">
+			<a
+				href={nav_href.next}
+				class="flex items-center justify-center border-2 p-1.5 transition hover:bg-black/10"
+			>
 				<Icon name="ArrowRight" />
 			</a>
 		</div>
@@ -81,7 +87,7 @@
 {/snippet}
 
 {#snippet sub()}
-	<div class="text-sm font-medium leading-4" style="">
+	<div class="opacity-70" style="">
 		<Block text={active.top[lang]} spacing={1} class="space-y-1" />
 	</div>
 {/snippet}
@@ -91,7 +97,7 @@
 {/snippet}
 
 {#snippet thumbnail()}
-	<div class="mt-4">
+	<div class="mt-8">
 		<div class="-mx-2.5">
 			<img class="" src={active.imgs[0].url} alt={active.name[lang]} />
 		</div>
@@ -101,7 +107,7 @@
 {#snippet imgs()}
 	{#each active.imgs as img, i}
 		<div
-			class="relative -mx-2.5 md:mx-0 mb-1.5 {i == 0 ? 'hidden md:block' : ''}"
+			class="relative -mx-2.5 mb-1.5 md:mx-0 {i == 0 ? 'hidden md:block' : ''}"
 			style="aspect-ratio: {img.asset.metadata.dimensions.aspectRatio}"
 		>
 			<SanityImg {img} alt={active.name[lang]} />
@@ -110,7 +116,7 @@
 {/snippet}
 
 {#if active}
-	<div class="hidden md:grid grid-cols-[30%_70%] 2xl:-mr-28 pr-1.5">
+	<div class="text-block hidden grid-cols-[30%_70%] pr-1.5 md:grid 2xl:-mr-28">
 		<div class="pr-16">
 			<div class="mb-12">{@render head()}</div>
 			<div class="mb-24">{@render sub()}</div>
@@ -122,7 +128,7 @@
 				<div>
 					{#each col.items as img}
 						<div
-							class="relative -mx-2.5 md:mx-0 mb-1.5 {i == 0 ? 'hidden md:block' : ''}"
+							class="relative -mx-2.5 mb-1.5 md:mx-0 {i == 0 ? 'hidden md:block' : ''}"
 							style="aspect-ratio: {img.asset.metadata.dimensions.aspectRatio}"
 						>
 							<SanityImg {img} alt={active.name[lang]} />
@@ -131,14 +137,9 @@
 				</div>
 			{/each}
 		</div>
-		<!--
-		<div class=" gap-1.5">
-			{@render imgs()}
-		</div>
-		-->
 	</div>
 
-	<div class="md:hidden mt-10 grid grid-cols-1 md:grid-cols-2">
+	<div class="mt-10 grid grid-cols-1 md:hidden md:grid-cols-2">
 		<div>
 			{@render head()}
 		</div>
@@ -146,10 +147,10 @@
 			{@render sub()}
 		</div>
 		{@render thumbnail()}
-		<div class="mt-6">
+		<div class="mb-24 mt-8">
 			{@render body()}
 		</div>
-		<div class="mt-6">
+		<div class="">
 			{@render imgs()}
 		</div>
 	</div>

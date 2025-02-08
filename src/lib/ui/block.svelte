@@ -2,7 +2,7 @@
 	const { text, spacing = 1.5, ...props } = $props();
 </script>
 
-<div class="whitespace-pre-line {props.class}">
+<div class="text-block whitespace-pre-line {props.class}">
 	{#each text as p}
 		<p style="">
 			{#each p.children as span}

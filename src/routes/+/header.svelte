@@ -3,11 +3,10 @@
 	import { page } from '$app/stores';
 	import Button from '$lib/ui/button.svelte';
 	import Icon from '$lib/ui/icons/icon.svelte';
-	import { trans } from '$lib/utils/trans.svelte';
 	import { onMount } from 'svelte';
+	import { get_lang_state } from '../../lib/lang-state.svelte';
+	import Link from '../link.svelte';
 	import Contact from './contact.svelte';
-	import { get_lang_state } from '../lib/lang-state.svelte';
-	import Link from './link.svelte';
 
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
@@ -27,6 +26,8 @@
 		scrolled = window.scrollY > 0;
 	}
 
+	$inspect({ scrolled });
+
 	const active = $derived($page.route.id);
 
 	let mobile_open = $state(false);
@@ -39,9 +40,7 @@
 <svelte:window {onscroll} />
 
 {#snippet links()}
-	<div
-		class="flex font-medium gap-3 md:gap-9 flex-col md:flex-row text-xl font-medium md:text-base"
-	>
+	<div class="flex flex-col gap-3 text-xl font-medium md:flex-row md:gap-6 md:text-base lg:gap-9">
 		<Link href={lang == 'fr' ? '/' : '/en'} active={active == '/'}
 			>{lang == 'fr' ? 'ACCUEIL' : 'HOME'}</Link
 		>
@@ -58,7 +57,7 @@
 
 {#snippet langs()}
 	<div
-		class="flex gap-4 items-center md:gap-4 text-xl font-medium md:text-base {mobile_open
+		class="flex items-center gap-4 text-xl font-medium md:gap-4 md:text-base {mobile_open
 			? ''
 			: ''}"
 	>
@@ -70,18 +69,18 @@
 <Contact open={contact_open} close={close_contact} />
 <header
 	style="background-color: rgba(241, 242, 224, 0.7);"
-	class="sticky backdrop-blur-xl z-30 top-0 2xl:-mx-28 -mx-4 px-4 xl:px-14 xl:-mx-14 2xl:px-28 bg-[--bg]- grid tracking-wide md:pt-5 pt-1 pb-1 md:pb-4 grid-cols-[auto_1fr] md:grid-cols-[1fr_auto_1fr] {scrolled ||
+	class="bg-[--bg]- sticky top-0 z-30 -mx-4 grid grid-cols-[auto_1fr] px-4 pb-1 pt-1 tracking-wide backdrop-blur-xl md:grid-cols-[1fr_auto_1fr] md:pb-4 md:pt-5 xl:-mx-14 xl:px-14 2xl:-mx-28 2xl:px-28 {scrolled ||
 	mobile_open
 		? ''
-		: 'border-transparent'} border-b-2"
+		: '!border-transparent'} border-b-2"
 >
-	<div class="font-medium flex items-center">
+	<div class="flex items-center font-medium">
 		<Link href={lang == 'fr' ? '/' : '/en'}>MAISON INTÉGRALE</Link>
 	</div>
-	<div class="hidden md:flex items-center justify-center">
+	<div class="hidden items-center justify-center md:flex">
 		{@render links()}
 	</div>
-	<div class="flex items-center -mr-0.5 md:mr-0 font-medium relative gap-3.5 md:gap-8 justify-end">
+	<div class="relative -mr-0.5 flex items-center justify-end gap-3.5 font-medium md:mr-0 md:gap-8">
 		<div class="hidden md:block">{@render langs()}</div>
 		<div>
 			<Button
@@ -91,10 +90,10 @@
 			>
 		</div>
 		<button
-			class="md:hidden flex items-center text-2xl"
+			class="flex items-center text-2xl md:hidden"
 			onclick={() => (mobile_open = !mobile_open)}
 		>
-			<Icon name="Menu" class=" transition ease-in-out duration-300" />
+			<Icon name="Menu" class=" transition duration-300 ease-in-out" />
 		</button>
 	</div>
 </header>
@@ -104,18 +103,18 @@
 		mobile_open = false;
 	}}
 	style=""
-	class="fixed top-10 left-0 right-0 h-[100lvh] z-10 bg-black/20 backdrop-blur- {mobile_open
+	class="backdrop-blur- fixed left-0 right-0 top-10 z-10 h-[100lvh] bg-black/20 {mobile_open
 		? ''
-		: 'opacity-0 pointer-events-none'} transition ease-in-out"
+		: 'pointer-events-none opacity-0'} transition ease-in-out"
 ></div>
 
 <div
 	style="width: calc(100% - 11.5rem); background-color: rgba(241, 242, 224, 0.8);"
-	class="fixed overflow-hidden flex backdrop-blur md:hidden bg-[--bg]- border-l-2 top-0 right-0 h-[100lvh] justify-end z-20 {mobile_open
+	class="bg-[--bg]- fixed right-0 top-0 z-20 flex h-[100lvh] justify-end overflow-hidden border-l-2 backdrop-blur md:hidden {mobile_open
 		? ''
-		: 'translate-x-8 opacity-0 pointer-events-none'} transition ease-in-out duration-300"
+		: 'pointer-events-none translate-x-8 opacity-0'} transition duration-300 ease-in-out"
 >
-	<div class="mt-14 pl-5 pr-3 pt-24 w-full gap-16 flex flex-col">
+	<div class="mt-14 flex w-full flex-col gap-16 pl-5 pr-3 pt-24">
 		{@render links()}
 		{@render langs()}
 	</div>
