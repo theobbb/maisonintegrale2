@@ -77,9 +77,6 @@
 	></script>
 </svelte:head>
 
-<div class="fixed bottom-4 left-4">
-	{progress}
-</div>
 <div
 	class="pointer-events-none fixed left-0 right-0 top-0 h-[100lvh] {reveal
 		? 'opacity-60'

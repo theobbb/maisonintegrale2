@@ -32,22 +32,6 @@
 
 <svelte:window {onscroll} />
 
-{#snippet item(e, cls)}
-	<div class="max-w-154 pr-16 {cls}">
-		<div class=" text-head uppercase">
-			{e.title[lang]}
-		</div>
-		{#if e.sub}
-			<div class="pt-0.5 text-sm font-semibold uppercase text-black/30">{e.sub[lang]}</div>
-		{/if}
-		<div class="text-block mt-7">
-			{#each e.body[lang].split('\n') as block}
-				<p class="mb-4">{block}</p>
-			{/each}
-		</div>
-	</div>
-{/snippet}
-
 <div
 	class="text-block fixed bottom-8 right-24 flex items-center gap-4 max-md:hidden {scrolled
 		? 'translate-y-4 opacity-0'
@@ -62,7 +46,7 @@
 	</div>
 </div>
 
-<div class=" mt-8 grid-cols-1 pb-44 lg:mr-10 lg:mt-14 xl:mt-24">
+<div class=" mt-14 grid-cols-1 pb-44 lg:mr-10 lg:mt-14 xl:mt-24">
 	<div class="space-y-176 text-block">
 		<div class="space-y-44">
 			<div>

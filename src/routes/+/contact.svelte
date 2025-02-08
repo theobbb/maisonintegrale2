@@ -47,14 +47,14 @@
 			<div class="flex flex-col gap-0.5 pb-2 pt-6">
 				<a
 					href="tel:+14506024535"
-					class="bg-lime-700/80- flex gap-1.5 bg-black/80 p-3.5 text-sm font-semibold text-white transition hover:bg-black/70 md:px-3 md:py-2 md:pl-2.5"
+					class="text-bg flex gap-1.5 bg-black/80 p-3.5 text-sm font-semibold transition hover:bg-black/70 md:px-3 md:py-2 md:pl-2.5"
 				>
 					<Icon class="text-xl" name="phone" />
 					<div>450-602-4535</div>
 				</a>
 				<a
 					href="mailto:baillargeonmarc@gmail.com"
-					class="bg-lime-700/80- flex gap-1.5 bg-black/80 p-3.5 text-sm font-semibold text-white transition hover:bg-black/70
+					class="text-bg flex gap-1.5 bg-black/80 p-3.5 text-sm font-semibold transition hover:bg-black/70
 md:px-3 md:py-2 md:pl-2.5"
 				>
 					<Icon class="text-xl" name="mail" />

@@ -10,6 +10,7 @@
 
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
+	const fr = $derived(lang == 'fr');
 
 	let contact_open = $state(false);
 
@@ -26,9 +27,25 @@
 		scrolled = window.scrollY > 0;
 	}
 
-	$inspect({ scrolled });
-
 	const active = $derived($page.route.id);
+
+	const links = $derived([
+		{
+			name: fr ? 'ACCUEIL' : 'HOME',
+			href: fr ? '/' : '/en',
+			active: active == '/'
+		},
+		{
+			name: fr ? 'À PROPOS' : 'ABOUT',
+			href: fr ? 'a-propos' : 'about',
+			active: active == '/a-propos'
+		},
+		{
+			name: fr ? 'RÉALISATIONS' : 'WORK',
+			href: fr ? 'realisations' : 'work',
+			active: active == '/realisations'
+		}
+	]);
 
 	let mobile_open = $state(false);
 
@@ -39,25 +56,9 @@
 
 <svelte:window {onscroll} />
 
-{#snippet links()}
-	<div class="flex flex-col gap-3 text-xl font-medium md:flex-row md:gap-6 md:text-base lg:gap-9">
-		<Link href={lang == 'fr' ? '/' : '/en'} active={active == '/'}
-			>{lang == 'fr' ? 'ACCUEIL' : 'HOME'}</Link
-		>
-		<Link
-			href="{lang_state.param}/{lang == 'fr' ? 'a-propos' : 'about'}"
-			active={active == '/a-propos'}>{lang == 'fr' ? 'À PROPOS' : 'ABOUT'}</Link
-		>
-		<Link
-			href="{lang_state.param}/{lang == 'fr' ? 'realisations' : 'work'}"
-			active={active == '/realisations'}>{lang == 'fr' ? 'RÉALISATIONS' : 'WORK'}</Link
-		>
-	</div>
-{/snippet}
-
 {#snippet langs()}
 	<div
-		class="flex items-center gap-4 text-xl font-medium md:gap-4 md:text-base {mobile_open
+		class="flex items-center gap-5 text-xl font-medium md:gap-4 md:text-base {mobile_open
 			? ''
 			: ''}"
 	>
@@ -77,8 +78,17 @@
 	<div class="flex items-center font-medium">
 		<Link href={lang == 'fr' ? '/' : '/en'}>MAISON INTÉGRALE</Link>
 	</div>
-	<div class="hidden items-center justify-center md:flex">
-		{@render links()}
+	<div
+		class="flex flex-col items-center justify-center gap-5 text-xl font-medium max-md:hidden md:flex-row md:gap-6 md:text-base lg:gap-9"
+	>
+		{#each links as { name, href, active }}
+			<a
+				{href}
+				class="{active ? 'underline decoration-black/20 decoration-2 underline-offset-4' : ''} "
+			>
+				{name}
+			</a>
+		{/each}
 	</div>
 	<div class="relative -mr-0.5 flex items-center justify-end gap-3.5 font-medium md:mr-0 md:gap-8">
 		<div class="hidden md:block">{@render langs()}</div>
@@ -103,19 +113,47 @@
 		mobile_open = false;
 	}}
 	style=""
-	class="backdrop-blur- fixed left-0 right-0 top-10 z-10 h-[100lvh] bg-black/20 {mobile_open
+	class="backdrop-blur- fixed left-0 right-0 top-10 z-10 h-[100lvh] bg-black/50 {mobile_open
 		? ''
 		: 'pointer-events-none opacity-0'} transition ease-in-out"
 ></div>
 
 <div
-	style="width: calc(100% - 11.5rem); background-color: rgba(241, 242, 224, 0.8);"
-	class="bg-[--bg]- fixed right-0 top-0 z-20 flex h-[100lvh] justify-end overflow-hidden border-l-2 backdrop-blur md:hidden {mobile_open
+	style="width: calc(100% - 11.5rem); background-color: rgba(241, 242, 224, 0.86);"
+	class="bg-bg fixed right-0 top-0 z-20 flex h-[100lvh] justify-end overflow-hidden border-l-2 backdrop-blur md:hidden {mobile_open
 		? ''
-		: 'pointer-events-none translate-x-8 opacity-0'} transition duration-300 ease-in-out"
+		: 'pointer-events-none translate-x-4 opacity-0'} transition duration-300 ease-in-out"
 >
-	<div class="mt-14 flex w-full flex-col gap-16 pl-5 pr-3 pt-24">
-		{@render links()}
-		{@render langs()}
+	<div class=" flex w-full flex-col gap-24 pl-7 pr-3 pt-24">
+		<div class="flex flex-col divide-y-2 text-xl font-medium">
+			{#each links as { name, href, active }}
+				<a {href} class="py-3 {active ? ' ' : 'text-black/40'} ">
+					{name}
+				</a>
+			{/each}
+		</div>
+		<div
+			class="flex items-center gap-5 text-xl font-medium md:gap-4 md:text-base {mobile_open
+				? ''
+				: ''}"
+		>
+			<a href={lang_state.href.fr} class={fr ? '' : 'text-black/40'} data-sveltekit-noscroll>FR</a>
+			<a href={lang_state.href.en} class={!fr ? '' : 'text-black/40'} data-sveltekit-noscroll>EN</a>
+		</div>
+		<div class="flex gap-0.5 pb-2 pt-6">
+			<a
+				href="tel:+14506024535"
+				class="text-bg flex gap-1.5 bg-black/80 p-3.5 text-sm font-semibold transition hover:bg-black/70"
+			>
+				<Icon class="text-3xl" name="phone" />
+			</a>
+			<a
+				href="mailto:baillargeonmarc@gmail.com"
+				class=" text-bg flex gap-1.5 bg-black/80 p-3.5 text-sm font-semibold transition hover:bg-black/70
+"
+			>
+				<Icon class="text-3xl" name="mail" />
+			</a>
+		</div>
 	</div>
 </div>
