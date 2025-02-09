@@ -14,7 +14,7 @@
 	} else {
 		set_lang_state('fr');
 	}
-	//ff
+	//ff s
 
 	const lang_state = get_lang_state();
 </script>
