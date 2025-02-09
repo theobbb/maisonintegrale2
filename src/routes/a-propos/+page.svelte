@@ -3,6 +3,7 @@
 	import { text } from './text';
 	import ModelViewer from './model-viewer.svelte';
 	import Icon from '$lib/ui/icons/icon.svelte';
+	import ThreeHouse from './three-house.svelte';
 
 	const lang_state = get_lang_state();
 
@@ -32,6 +33,8 @@
 
 <svelte:window {onscroll} />
 
+<!-- <ModelViewer /> -->
+<ThreeHouse />
 <div
 	class="text-block fixed bottom-8 right-24 flex items-center gap-4 max-md:hidden {scrolled
 		? 'translate-y-4 opacity-0'
@@ -223,5 +226,3 @@
 		</div>
 	</div>
 </div>
-
-<ModelViewer />

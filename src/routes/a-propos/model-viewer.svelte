@@ -63,9 +63,6 @@
 
 		model.currentTime = contain_float(progress * model.duration, 0.01, model.duration - 0.01);
 	}
-	//camera-orbit="calc(4.4rad - {progress} * 2rad) calc(200deg + {progress} * -140deg) calc(12m - {progress} * 8m)"
-
-	//camera-orbit="0 {progress * -45 + 90}deg {(1 - progress) * 32}m"
 </script>
 
 <svelte:window {onscroll} />
@@ -86,7 +83,6 @@
 		material="color: red; metalness: 0.5; roughness: 0.5;"
 		{onload}
 		preload
-		loading="eager"
 		class=" max-md:scale-200 absolute inset-0 h-full w-full"
 		disable-zoom
 		bind:this={model}
