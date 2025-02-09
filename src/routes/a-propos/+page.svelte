@@ -60,15 +60,17 @@
 						{#if fr}
 							Constructeur{:else}Builder{/if}
 					</div>
-					<div>
-						{#if fr}Entrepreneur en construction depuis plus de vingt ans{:else}A construction
-							contractor with over twenty years of experience.{/if}
-					</div>
-					<div class="">
-						{#if fr}Ph.D. en physique des particules
-						{:else}
-							Ph.D. in particle physics.
-						{/if}
+					<div class="flex flex-col-reverse md:flex-col">
+						<div>
+							{#if fr}Entrepreneur en construction depuis 20 ans +{:else}A construction contractor
+								with over twenty years of experience.{/if}
+						</div>
+						<div class="">
+							{#if fr}Ph.D. en physique des particules
+							{:else}
+								Ph.D. in particle physics.
+							{/if}
+						</div>
 					</div>
 				</div>
 
