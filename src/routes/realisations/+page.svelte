@@ -38,7 +38,7 @@
 			>
 				<div class=" relative h-[10rem] w-full overflow-hidden" style="">
 					<div
-						class="relative h-full w-full grayscale transition duration-300 max-md:animate-[press_3s_infinite] max-md:group-hover:scale-[1.05]"
+						class="relative h-full w-full transition duration-300 max-md:animate-[press_3s_infinite] max-md:group-hover:scale-[1.05]"
 					>
 						<SanityImg img={item.imgs[0]} alt={item.name[lang]} />
 					</div>
