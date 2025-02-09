@@ -46,33 +46,11 @@ html {
 .home-icons svg path:nth-child(2) {
 	opacity: 50%;
 }
-@media (min-width: 320px) {
-	#test {
-		display: none;
+@keyframes press {
+	0% {
+		transform: scale(100%);
 	}
-}
-@media (min-width: 40rem) {
-	#test {
-		display: none;
-	}
-}
-@media (min-width: 48rem) {
-	#test {
-		display: none;
-	}
-}
-@media (min-width: 64rem) {
-	#test {
-		display: none;
-	}
-}
-@media (min-width: 80rem) {
-	#test {
-		display: none;
-	}
-}
-@media (min-width: 96rem) {
-	#test {
-		display: none;
+	50% {
+		transform: scale(110%);
 	}
 }

@@ -37,13 +37,13 @@
 		},
 		{
 			name: fr ? 'À PROPOS' : 'ABOUT',
-			href: fr ? 'a-propos' : 'about',
+			href: fr ? '/a-propos' : '/en/about',
 			active: active == '/a-propos'
 		},
 		{
 			name: fr ? 'RÉALISATIONS' : 'WORK',
-			href: fr ? 'realisations' : 'work',
-			active: active == '/realisations'
+			href: fr ? '/realisations' : '/en/work',
+			active: active?.startsWith('/realisations')
 		}
 	]);
 
