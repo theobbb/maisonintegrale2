@@ -1,7 +1,6 @@
 <script>
 	import { get_lang_state } from '../../lib/lang-state.svelte';
-	import { text } from './text';
-	import ModelViewer from './model-viewer.svelte';
+
 	import Icon from '$lib/ui/icons/icon.svelte';
 	import ThreeHouse from './three-house.svelte';
 
@@ -33,7 +32,6 @@
 
 <svelte:window {onscroll} />
 
-<!-- <ModelViewer /> -->
 <ThreeHouse />
 <div
 	class="text-block fixed bottom-8 right-24 flex items-center gap-4 max-md:hidden {scrolled
@@ -113,7 +111,7 @@
 						{#if fr}Artiste reconnue au Québec{:else}A recognized artist in Quebec.{/if}
 					</div>
 					<div class="">
-						{#if fr}Dimplômée en design{:else}Graduate in design.{/if}
+						{#if fr}Diplômée en design{:else}Graduate in design.{/if}
 					</div>
 					<div class="">
 						{#if fr}Conférencière{:else}Speaker{/if}

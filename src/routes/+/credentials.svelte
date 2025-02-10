@@ -48,7 +48,7 @@
 	</div>
 
 	{@render divider()}
-	<div class="col-span-2 text-right text-black/60">RBQ 5683-285</div>
+	<div class="col-span-2 text-right text-black/60">RBQ 5683-2850</div>
 </div>
 
 {#snippet divider()}

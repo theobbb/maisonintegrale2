@@ -91,7 +91,7 @@
 						Tous droits réservés{:else}All rights reserved{/if}.
 				</div>
 			</div>
-			<div>RBQ 5683-285</div>
+			<div>RBQ 5683-2850</div>
 		</div>
 	</div>
 </footer>
