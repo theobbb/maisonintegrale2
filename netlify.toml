@@ -1,3 +1,13 @@
 [build]
 	command = "npm run build"
 	publish = "build"
+
+[[redirects]]
+	from = "/images/:folder/full/:file"
+	to = "/.netlify/images?url=/images/:folder/:file&fm=blurhash"
+	status = 200
+
+[[redirects]]
+	from = "/images/:folder/:width/:file"
+	to = "/.netlify/images?url=/images/:folder/:file&width=:width&fm=blurhash"
+	status = 200

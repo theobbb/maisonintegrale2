@@ -23,7 +23,7 @@
 <div class="absolute inset-0 h-full w-full overflow-hidden" style="">
 	<img
 		fetchPriority="high"
-		class="absolute top-0 left-0 w-full h-full blur-lg object-cover contrast-[.8] {loaded
+		class="absolute top-0 left-0 h-full w-full object-cover blur-lg contrast-[.8] {loaded
 			? 'hidden-'
 			: ''}"
 		src={blurdata}
@@ -31,7 +31,7 @@
 	/>
 
 	<img
-		class="w-full z-10 relative h-full object-cover {loaded
+		class="relative z-10 h-full w-full object-cover {loaded
 			? ''
 			: 'opacity-0'} transition duration-300"
 		{src}

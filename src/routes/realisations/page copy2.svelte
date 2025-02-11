@@ -46,7 +46,7 @@
 					<img class="hidden object-cover h-full" src={item.imgs[0].url} alt={item.name[lang]} />
 					-->
 				</div>
-				<div class="-mx-1.5 mt-2.5 mb-10 px-4 lg:mb-8">
+				<div class="-mx-1.5 mb-10 mt-2.5 px-4 lg:mb-8">
 					<div class="font-semibold tracking-wide">{item.name[lang]}</div>
 					<div class=" mt-6 text-sm">
 						<Block text={item.top[lang]} spacing={1} class="space-y-1-" />
