@@ -22,7 +22,6 @@
 
 	const prev = $derived(houses[(current_i + houses.length - 1) % houses.length][lang]);
 	const next = $derived(houses[(current_i + houses.length + 1) % houses.length][lang]);
-	$inspect(next);
 </script>
 
 <div class="max-w-164 pb-12 lg:pr-24">

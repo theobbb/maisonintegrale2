@@ -9,7 +9,7 @@
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
 
-	lang_state.set_href('/realisations/atelier', '/en/work/atelier');
+	lang_state.set_href('/realisations.', '/en/work.');
 </script>
 
 <Card
@@ -62,8 +62,6 @@
 		{/if}
 	</div>
 </Card>
-<Img src="/atelier/8.jpg" alt="atelier-8" />
-<Img src="/atelier/3.jpg" alt="atelier-3" class="justify-start-" />
 
 <Img
 	src="/atelier/4.jpg"

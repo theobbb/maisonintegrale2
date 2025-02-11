@@ -53,11 +53,6 @@ export const text = {
 	},
 	comments: [
 		{
-			from: 'Famille Dubois',
-			text: `"Marc a su concrétiser notre vision d'une maison écologique sans compromis sur le confort. Notre facture d'énergie a été réduite de 70%, c'est simplement remarquable !"`
-		},
-
-		{
 			from: 'Claire et Jean Tremblay',
 			text: `"Marisol a un don pour intégrer les maisons dans leur environnement naturel tout en optimisant l'efficacité énergétique. Chaque pièce bénéficie d'une lumière naturelle exceptionnelle grâce à son design intelligent."`
 		}
