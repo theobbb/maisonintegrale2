@@ -1,5 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 
 	import { houses } from '$lib/houses';
@@ -8,7 +7,6 @@
 	import Block from '$lib/ui/block.svelte';
 	import Icon from '$lib/ui/icons/icon.svelte';
 	import { get_lang_state } from '../../../lib/lang-state.svelte';
-	import Atelier from './+/atelier.svelte';
 
 	const { data } = $props();
 
