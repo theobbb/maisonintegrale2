@@ -18,14 +18,13 @@
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
 
-	const current_i = $derived(houses.findIndex((h) => h.fr == page.route.id));
-
-	const prev = $derived(houses[(current_i + houses.length - 1) % houses.length][lang]);
-	const next = $derived(houses[(current_i + houses.length + 1) % houses.length][lang]);
+	const active = $derived(houses[page.route.id]);
 </script>
 
-<div class="max-w-164 pb-12 lg:pr-24">
-	<div class="mb-16 flex items-center gap-1.5 max-sm:justify-between">
+<div
+	class="col-span-full mt-12 flex flex-col justify-between gap-44 pb-12 lg:mt-24 lg:flex-row lg:pr-24"
+>
+	<!-- <div class="mb-16 flex items-center gap-1.5 max-sm:justify-between">
 		<a
 			href="/{fr ? 'realisations' : 'en/work'}"
 			class="border-2 px-3 py-2 text-sm font-bold whitespace-nowrap uppercase"
@@ -45,36 +44,38 @@
 				<Icon name="ArrowRight" />
 			</a>
 		</div>
-	</div>
-	<div class="mb-12 text-2xl font-medium uppercase">
-		{title}
-	</div>
-	<div class="mb-24 text-black/40">
-		<div class="grid grid-cols-2 gap-x-6">
-			{#if location}
-				<div>{fr ? 'lieu' : 'location'}</div>
-				<div>
-					{location}
-				</div>
-			{/if}
-			{#if designer}
-				<div>{fr ? 'conception' : 'design'}</div>
-				<div>
-					{designer}
-				</div>
-			{/if}
-			{#if client}
-				<div>client</div>
-				<div>
-					{client}
+	</div> -->
+	<div>
+		<div class="mb-6 text-2xl font-medium uppercase">
+			{active.name[lang]}
+		</div>
+		<div class="mb-24 text-black/40">
+			<div class="grid grid-cols-2 gap-x-6">
+				{#if active.location}
+					<div>{fr ? 'lieu' : 'location'}</div>
+					<div>
+						{active.location[lang]}
+					</div>
+				{/if}
+				{#if active.designer}
+					<div>{fr ? 'conception' : 'design'}</div>
+					<div>
+						{active.designer[lang]}
+					</div>
+				{/if}
+				{#if active.client}
+					<div>client</div>
+					<div>
+						{active.client[lang]}
+					</div>
+				{/if}
+			</div>
+			{#if meta}
+				<div class="mt-6">
+					{@render meta()}
 				</div>
 			{/if}
 		</div>
-		{#if meta}
-			<div class="mt-12">
-				{@render meta()}
-			</div>
-		{/if}
 	</div>
 	<div>
 		{@render children()}

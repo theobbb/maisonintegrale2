@@ -8,15 +8,12 @@
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
-
-	lang_state.set_href('/realisations/maison-du-cerf-modele', '/en/work/deer-house-model');
 </script>
 
 <Card
 	title={fr ? 'MAISON DU CERF MODÈLE' : 'DEER HOUSE MODEL'}
 	location="Val-David"
 	designer="Maison Intégrale"
-	nav={{ prev: '', next: '' }}
 >
 	{#snippet meta()}
 		{#if fr}

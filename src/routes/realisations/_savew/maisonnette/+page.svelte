@@ -3,13 +3,9 @@
 	import { get_lang_state } from '$lib/lang-state.svelte';
 	import Card from '../+/card.svelte';
 
-	const n_imgs = 1;
-
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
-
-	lang_state.set_href('/realisations/maisonnette', '/en/work/maisonnette');
 </script>
 
 <Card title="maisonette" location="Sainte-Adèle" designer="Maison Intégrale">

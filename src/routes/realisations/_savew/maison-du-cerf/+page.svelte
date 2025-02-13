@@ -8,11 +8,9 @@
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
-
-	lang_state.set_href('/realisations/maison-du-cerf', '/en/work/house-of-the-deer');
 </script>
 
-<Card title="MAISON DU CERF" location="Val-David" designer="client" nav={{ prev: '', next: '' }}>
+<Card title="MAISON DU CERF" location="Val-David" designer="client">
 	{#snippet meta()}
 		{#if fr}
 			En montagne, sur une falaise

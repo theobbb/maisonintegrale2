@@ -11,8 +11,8 @@ export function reroute({ url }) {
 		return translated[url.pathname];
 	}
 
-	const match_house = houses.find((h) => h.en == url.pathname);
-	if (match_house) return match_house.fr;
+	const match_house = houses.list.find((h) => h.href.en == url.pathname);
+	if (match_house) return match_house.href.fr;
 	/*
 
 	if (url.pathname.includes('/en/work')) {

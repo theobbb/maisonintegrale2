@@ -8,8 +8,6 @@
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
-
-	lang_state.set_href('/realisations/maison-de-campagne', '/en/work/country-house');
 </script>
 
 <Card

@@ -20,13 +20,26 @@
 ></div>
 
 <div class="text-lg leading-6 font-medium">
+	<div>
+		"De la conception du projet de maison à sa réalisation complète, Maison Intégrale a maintenu un
+		haut standard de qualité. Une complicité constante entre proprios et entrepreneur fut la recette
+		du succès de cette construction."
+	</div>
+
+	<div class="text-block mt-4 flex items-center justify-end gap-2 font-medium">
+		<Icon name="user" class="text-xl opacity-40" />
+		Gérald L.
+	</div>
+</div>
+
+<div class="text-lg leading-6 font-medium">
 	<div onclick={() => (open = 2)} class="cursor-pointer">
 		<div>
 			"...Marc was professional, honest, and incredibly reliable. He managed the entire project
 			seamlessly, ensuring everything was completed on time and to a high standard..."
 		</div>
 		<button class="text-sm font-semibold">Lire la suite</button>
-		<div class="text-block mt-4 flex items-center gap-2 font-medium">
+		<div class="text-block mt-4 flex items-center justify-end gap-2 font-medium">
 			<Icon name="user" class="text-xl opacity-40" />
 			Ali S.
 		</div>
@@ -64,12 +77,3 @@
 		</div>
 	</div>
 </div>
-{#each text.comments as c}
-	<div>
-		<div class="text-lg leading-6 font-medium">{c.text}</div>
-		<div class="text-block mt-4 flex items-center gap-2 font-medium">
-			<Icon name="user" class="text-xl opacity-40" />
-			{c.from}
-		</div>
-	</div>
-{/each}

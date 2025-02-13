@@ -8,11 +8,9 @@
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
-
-	lang_state.set_href('/realisations/cottage', '/en/work/cottage');
 </script>
 
-<Card title="COTTAGE" location="Rosemère" designer="Maison Intégrale" nav={{ prev: '', next: '' }}>
+<Card title="COTTAGE" location="Rosemère" designer="Maison Intégrale">
 	{#snippet meta()}
 		{#if fr}
 			Rdc 1432 pi2
@@ -53,10 +51,10 @@
 		{/if}
 	</div>
 </Card>
-<div class="space-y-24">
+<!-- <div class="space-y-24">
 	<Img src="/cottage/0.jpg" alt="cottage-8" class="saturate-0" />
 	<Img src="/cottage/1.jpg" alt="cottage-8" class="col-span-2- items-start saturate-0" />
 </div>
 
 <Img src="/cottage/3.jpg" alt="cottage-8" class="saturate-50 lg:ml-36" />
-<Img src="/cottage/4.jpg" alt="cottage-8" class="brightness-120 saturate-50 lg:mr-36" />
+<Img src="/cottage/4.jpg" alt="cottage-8" class="brightness-120 saturate-50 lg:mr-36" /> -->

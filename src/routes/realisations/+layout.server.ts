@@ -1,3 +1,4 @@
+import { houses } from '$lib/houses';
 import { client } from '$lib/sanity-client';
 
 export async function load() {
@@ -16,6 +17,7 @@ export async function load() {
 	res.forEach((project, i) => {
 		project.i = i;
 	});
+
 	return {
 		res
 	};

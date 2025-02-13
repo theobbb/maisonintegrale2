@@ -8,8 +8,6 @@
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
-
-	lang_state.set_href('/realisations/maison-du-cerf-2', '/en/work/house-of-the-deer-2');
 </script>
 
 <Card

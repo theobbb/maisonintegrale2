@@ -1,24 +1,18 @@
 <script>
+	import { houses } from '$lib/houses';
 	import Img from '$lib/img.svelte';
 	import { get_lang_state } from '$lib/lang-state.svelte';
 	import Card from '../+/card.svelte';
+	import Imgs from '../+/imgs.svelte';
 
 	const n_imgs = 1;
 
 	const lang_state = get_lang_state();
 	const lang = $derived(lang_state.lang);
 	const fr = $derived(lang == 'fr');
-
-	lang_state.set_href('/realisations.', '/en/work.');
 </script>
 
-<Card
-	title="atelier"
-	location="Sainte-Adèle"
-	designer="Maison Intégrale"
-	client="Stéphane Rousseau"
-	nav={{ prev: '', next: '' }}
->
+<Card>
 	{#snippet meta()}
 		{#if fr}
 			En montagne, sur une falaise
@@ -63,6 +57,12 @@
 	</div>
 </Card>
 
+<!-- <Img
+	src="/atelier/4.jpg"
+	alt="atelier-4"
+	class="
+	 max-sm:aspect-square max-sm:[&_img]:min-h-full max-sm:[&_img]:min-w-full max-sm:[&_img]:object-cover"
+/>
 <Img
 	src="/atelier/4.jpg"
 	alt="atelier-4"
@@ -83,4 +83,4 @@
 <Img src="/atelier/10.jpg" alt="atelier-10" />
 <Img src="/atelier/9.jpg" alt="atelier-9" class="brightness-90" />
 
-<Img src="/atelier/12.jpg" alt="atelier-12" />
+<Img src="/atelier/12.jpg" alt="atelier-12" /> -->
