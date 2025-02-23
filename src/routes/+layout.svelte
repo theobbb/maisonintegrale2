@@ -24,7 +24,7 @@
 </script>
 
 <main
-	class="**:border-black/10 m-auto max-w-[1920px] px-4 tracking-tight md:tracking-normal xl:px-14 2xl:px-28"
+	class="m-auto max-w-[1920px] px-4 tracking-tight **:border-black/10 md:tracking-normal xl:px-14 2xl:px-28"
 >
 	<Header />
 	<div class="min-h-[calc(100lvh-17rem)]">{@render children()}</div>
